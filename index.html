@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>XVIP</title>
+    <style type="text/css">
+    ​@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Code Pro'), local('SourceCodePro-Regular'), url(http://themes.googleusercontent.com/static/fonts/sourcecodepro/v4/mrl8jkM18OlOQN8JLgasDxM0YzuT7MdOe03otPbuUS0.woff) format('woff');
+}
+
+body {
+    font-family: Source Code Pro;
+    background:#000;
+    color: #00FF00;
+    margin:0;
+    font-size: 13px;
+}
+canvas {
+    position:absolute;
+    top:0;
+    left:0;
+}
+.bars-and-stuff{
+    left:66.6%;
+}
+
+.output-console {
+    position:fixed;
+    overflow:hidden;
+}
+p{margin:0}
+</style>
+  </head>
+  <body>
+  	<canvas class='hacker-3d-shiz'></canvas>
+<canvas class='bars-and-stuff'></canvas>
+<div class="output-console"></div>
+	<script>
+		var canvas=document.querySelector(".hacker-3d-shiz"),ctx=canvas.getContext("2d"),canvasBars=document.querySelector(".bars-and-stuff"),ctxBars=canvasBars.getContext("2d"),outputConsole=document.querySelector(".output-console");function Square(a){this.width=canvas.width/2,canvas.height<200&&(this.width=200),this.height=canvas.height,a=a||0,this.points=[new Point({x:canvas.width/2-this.width,y:canvas.height/2-this.height,z:a}),new Point({x:canvas.width/2+this.width,y:canvas.height/2-this.height,z:a}),new Point({x:canvas.width/2+this.width,y:canvas.height/2+this.height,z:a}),new Point({x:canvas.width/2-this.width,y:canvas.height/2+this.height,z:a})],this.dist=0}function Point(a){this.x=a.x-canvas.width/2||0,this.y=a.y-canvas.height/2||0,this.z=a.z||0,this.cX=0,this.cY=0,this.cZ=0,this.xPos=0,this.yPos=0,this.map2D()}canvas.width=window.innerWidth/3*2,canvas.height=window.innerHeight/3,canvasBars.width=window.innerWidth/3,canvasBars.height=canvas.height,outputConsole.style.height=window.innerHeight/3*2+"px",outputConsole.style.top=window.innerHeight/3+"px",Square.prototype.update=function(){for(var a=0;a<this.points.length;a++)this.points[a].rotateZ(.001),this.points[a].z-=3,this.points[a].z< -300&&(this.points[a].z=2700),this.points[a].map2D()},Square.prototype.render=function(){ctx.beginPath(),ctx.moveTo(this.points[0].xPos,this.points[0].yPos);for(var a=1;a<this.points.length;a++)this.points[a].z> -(focal-50)&&ctx.lineTo(this.points[a].xPos,this.points[a].yPos);ctx.closePath(),ctx.stroke(),this.dist=this.points[this.points.length-1].z},Point.prototype.rotateZ=function(a){var b=Math.cos(a),c=Math.sin(a),d=this.x*b-this.y*c,e=this.y*b+this.x*c;this.x=d,this.y=e},Point.prototype.map2D=function(){var a=focal/(focal+this.z+this.cZ),b=focal/(focal+this.z+this.cZ);this.xPos=vpx+(this.cX+this.x)*a,this.yPos=vpy+(this.cY+this.y)*b};var squares=[],focal=canvas.width/2,vpx=canvas.width/2,vpy=canvas.height/2,barVals=[],sineVal=0,commandStart=["Performing DNS Lookups for","Searching ","Analyzing ","Estimating Approximate Location of ","Compressing ","Requesting Authorization From : ","wget -a -t ","tar -xzf ","Entering Location ","Compilation Started of ","Downloading "],commandParts=["Data Structure","http://telegram.me/xteambd","Texture","TPS Reports"," .... Searching ... ","http://t.me/xteambdchat","http://t.me/xteambd"],commandResponses=["Authorizing ","Authorized...","Access Granted..","Going Deeper....","Compression Complete.","Compilation of Data Structures Complete..","Entering Security Console...","Encryption Unsuccesful Attempting Retry...","Waiting for response...","....Searching...","Calculating Space Requirements "],isProcessing=!1,processTime=0,lastProcess=0;function render(){ctx.clearRect(0,0,canvas.width,canvas.height),squares.sort(function(a,b){return b.dist-a.dist});for(var a=0,d=squares.length;a<d;a++)squares[a].update(),squares[a].render();ctxBars.clearRect(0,0,canvasBars.width,canvasBars.height),ctxBars.beginPath();var b=canvasBars.height/6;for(ctxBars.moveTo(0,b),a=0;a<canvasBars.width;a++){var c=20*Math.random()-10;Math.random()>.98&&(c=50*Math.random()-25),ctxBars.lineTo(a,b+c)}for(ctxBars.stroke(),a=0;a<canvasBars.width;a+=20)barVals[a]||(barVals[a]={val:Math.random()*(canvasBars.height/2),freq:.1,sineVal:100*Math.random()}),barVals[a].sineVal+=barVals[a].freq,barVals[a].val+=5*Math.sin(barVals[a].sineVal*Math.PI/2),ctxBars.fillRect(a+5,canvasBars.height,15,-barVals[a].val);requestAnimationFrame(render)}function consoleOutput(){var a=document.createElement("p");if(isProcessing)a=document.createElement("span"),a.textContent+=Math.random()+" ",Date.now()>lastProcess+processTime&&(isProcessing=!1);else{var d=~~(4*Math.random());switch(d){case 0:a.textContent=commandStart[~~(Math.random()*commandStart.length)]+commandParts[~~(Math.random()*commandParts.length)];break;case 3:isProcessing=!0,processTime=~~(5e3*Math.random()),lastProcess=Date.now();default:a.textContent=commandResponses[~~(Math.random()*commandResponses.length)]}}if(outputConsole.scrollTop=outputConsole.scrollHeight,outputConsole.appendChild(a),outputConsole.scrollHeight>window.innerHeight)for(var c=outputConsole.querySelectorAll("*"),b=0;b< ~~(c.length/3);b++)outputConsole.removeChild(c[b]);setTimeout(consoleOutput,~~(200*Math.random()))}setTimeout(function(){canvas.width=window.innerWidth/3*2,canvas.height=window.innerHeight/3,canvasBars.width=window.innerWidth/3,canvasBars.height=canvas.height,outputConsole.style.height=window.innerHeight/3*2+"px",outputConsole.style.top=window.innerHeight/3+"px",focal=canvas.width/2,vpx=canvas.width/2,vpy=canvas.height/2;for(var a=0;a<15;a++)squares.push(new Square(-300+200*a));ctx.strokeStyle=ctxBars.strokeStyle=ctxBars.fillStyle="#00FF00",render(),consoleOutput()},200),window.addEventListener("resize",function(){canvas.width=window.innerWidth/3*2,canvas.height=window.innerHeight/3,canvasBars.width=window.innerWidth/3,canvasBars.height=canvas.height,outputConsole.style.height=window.innerHeight/3*2+"px",outputConsole.style.top=window.innerHeight/3+"px",focal=canvas.width/2,vpx=canvas.width/2,vpy=canvas.height/2,ctx.strokeStyle=ctxBars.strokeStyle=ctxBars.fillStyle="#00FF00"})
+		</script>
+  </body>
+</html>
