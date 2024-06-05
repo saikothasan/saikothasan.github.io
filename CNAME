@@ -1,0 +1,13 @@
+github.com
+api.github.com
+*.actions.githubusercontent.com
+codeload.github.com
+ghcr.io
+*.actions.githubusercontent.com
+results-receiver.actions.githubusercontent.com
+*.blob.core.windows.net
+objects.githubusercontent.com
+objects-origin.githubusercontent.com
+github-releases.githubusercontent.com
+github-registry-files.githubusercontent.com
+*.pkg.github.com
