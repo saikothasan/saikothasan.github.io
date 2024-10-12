@@ -1,0 +1,332 @@
+<html>
+ <head>
+  <title>
+   Dollarvaly
+  </title>
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            background-color: #f8f9fa;
+            padding: 10px;
+        }
+        .navbar-brand img {
+            height: 50px;
+        }
+        .operator-status {
+            background-color: #e0e7ff;
+            padding: 10px;
+            text-align: center;
+        }
+        .operator-status span {
+            margin-right: 10px;
+        }
+        .operator-status .badge {
+            background-color: #00b300;
+        }
+        .welcome-bar {
+            background-color: #f8f9fa;
+            padding: 10px;
+            text-align: center;
+        }
+        .welcome-bar span {
+            margin-right: 10px;
+        }
+        .nav-tabs {
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .exchange-box {
+            background-color: #f0f4ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .exchange-box h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .exchange-box .step-indicator {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .exchange-box .step-indicator span {
+            margin: 0 10px;
+        }
+        .exchange-box .manual-exchange {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .exchange-box .amount-box {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .exchange-box .amount-box div {
+            flex: 1;
+            margin: 0 10px;
+        }
+        .exchange-box .amount-box div:first-child {
+            margin-left: 0;
+        }
+        .exchange-box .amount-box div:last-child {
+            margin-right: 0;
+        }
+        .exchange-box .amount-box input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .exchange-box .exchange-rate {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .exchange-box .btn {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .exchange-info {
+            background-color: #f0f4ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .exchange-info h4 {
+            margin-bottom: 20px;
+        }
+        .footer {
+            background-color: #002b36;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .footer .social-icons {
+            margin-bottom: 20px;
+        }
+        .footer .social-icons a {
+            margin: 0 10px;
+        }
+        .footer .footer-links {
+            margin-bottom: 20px;
+        }
+        .footer .footer-links a {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .footer .footer-bottom {
+            font-size: 14px;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="navbar">
+   <a class="navbar-brand" href="#">
+    <img alt="Dollarvaly Logo" height="50" src="https://storage.googleapis.com/a1aa/image/yIhIQUSvq7KfOiS8z3pq7yGyNNd67OftpWFQQGvuwCOiMCmTA.jpg" width="200"/>
+   </a>
+  </div>
+  <div class="operator-status">
+   <span>
+    Operator:
+    <span class="badge">
+     online
+    </span>
+   </span>
+   <span>
+    working time: 9 am to 11.30 pm (সকাল ৯ টা থেকে রাত ১১.৩০ মিনিট পর্যন্ত) GTM+6
+   </span>
+  </div>
+  <div class="welcome-bar">
+   <span>
+    Welcome, Seyam | Balance: $0.00 | Referrals: 0
+   </span>
+   <span>
+    <a href="#">
+     My Account
+    </a>
+   </span>
+  </div>
+  <ul class="nav nav-tabs">
+   <li class="nav-item">
+    <a class="nav-link active" href="#">
+     Exchange
+    </a>
+   </li>
+   <li class="nav-item">
+    <a class="nav-link" href="#">
+     Rates
+    </a>
+   </li>
+   <li class="nav-item">
+    <a class="nav-link" href="#">
+     Affiliates
+    </a>
+   </li>
+   <li class="nav-item">
+    <a class="nav-link" href="#">
+     Testimonials
+    </a>
+   </li>
+  </ul>
+  <div class="container">
+   <div class="exchange-box">
+    <h3>
+     Exchange
+     <i class="fas fa-exchange-alt">
+     </i>
+     USDT (Binance Payment) USD
+     <i class="fas fa-arrow-right">
+     </i>
+     B-kash BDT
+    </h3>
+    <div class="step-indicator">
+     <span class="badge bg-primary">
+      STEP 1
+     </span>
+     <span>
+      STEP 2
+     </span>
+     <span>
+      STEP 3
+     </span>
+    </div>
+    <h3>
+     Enter Amount
+    </h3>
+    <div class="manual-exchange">
+     <p>
+      <i class="fas fa-exchange-alt">
+      </i>
+      Manual Exchange
+     </p>
+     <p>
+      This is manual exchange. Operator will need some time to review your payment.
+     </p>
+     <p>
+      Working hours: 9 am to 11.30 pm (সকাল ৯ টা থেকে রাত ১১.৩০ মিনিট পর্যন্ত) GTM+6
+     </p>
+    </div>
+    <div class="amount-box">
+     <div>
+      <label for="amount-send">
+       <i class="fas fa-dollar-sign">
+       </i>
+       Amount Send
+      </label>
+      <input id="amount-send" placeholder="1 USD" type="number"/>
+      <p>
+       Min Amount: 2 USD
+      </p>
+      <p>
+       Max Amount: 350 USD
+      </p>
+     </div>
+     <div>
+      <label for="amount-receive">
+       <i class="fas fa-money-bill-wave">
+       </i>
+       Amount Receive
+      </label>
+      <input id="amount-receive" placeholder="120 BDT" type="number"/>
+      <p>
+       Max Amount: 99765.4846 BDT
+      </p>
+     </div>
+    </div>
+    <div class="exchange-rate">
+     <p>
+      <i class="fas fa-exchange-alt">
+      </i>
+      Exchange Rate: 1 USD = 120 BDT
+     </p>
+    </div>
+    <button class="btn btn-primary">
+     Next Step
+    </button>
+    <button class="btn btn-secondary">
+     Go Back
+    </button>
+   </div>
+   <div class="exchange-info">
+    <h4>
+     <i class="fas fa-info-circle">
+     </i>
+     Exchange Info
+    </h4>
+    <p>
+     Reserve: 99765.4846 BDT
+     <a href="#">
+      want more?
+     </a>
+    </p>
+    <p>
+     Min Amount: 2 USD
+    </p>
+    <p>
+     Max Amount: 350 USD
+    </p>
+    <p>
+     <i class="fas fa-lock">
+     </i>
+     Secure Exchange
+    </p>
+    <p>
+     Your exchange is always safe and secure.
+    </p>
+   </div>
+  </div>
+  <div class="footer">
+   <div class="footer-logo">
+    <img alt="Dollarvaly Logo" height="50" src="https://storage.googleapis.com/a1aa/image/yIhIQUSvq7KfOiS8z3pq7yGyNNd67OftpWFQQGvuwCOiMCmTA.jpg" width="200"/>
+   </div>
+   <div class="footer-info">
+    <p>
+     Working Time: 9 am to 11.30 pm (সকাল ৯ টা থেকে রাত ১১.৩০ মিনিট পর্যন্ত) GTM+6
+    </p>
+   </div>
+   <div class="social-icons">
+    <a href="#">
+     <i class="fas fa-rss">
+     </i>
+    </a>
+   </div>
+   <div class="footer-links">
+    <a href="#">
+     About Us
+    </a>
+    <a href="#">
+     News
+    </a>
+    <a href="#">
+     Terms &amp; Conditions
+    </a>
+    <a href="#">
+     Privacy Policy
+    </a>
+    <a href="#">
+     Contact Us
+    </a>
+   </div>
+   <div class="footer-bottom">
+    <p>
+     © 2019-2024 DollarValy. All rights reserved.
+    </p>
+    <p>
+     Powered by DollarValy
+    </p>
+   </div>
+  </div>
+  <script crossorigin="anonymous" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+3i5d5L5hb5g7v4l5Y5b5Y5b5Y5b5" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+  </script>
+ </body>
+</html>
